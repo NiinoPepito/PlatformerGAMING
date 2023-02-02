@@ -27,7 +27,7 @@ public class StartFinishGame : MonoBehaviour
     void Update()
     {
         
-        if (player.position.y < -15 ){
+        if (player.position.y < -15){
             _animator.Play(Deaded, 0, 0.0f);
             Start();
 
