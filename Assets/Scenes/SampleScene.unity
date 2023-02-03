@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 13131389}
   m_Layer: 0
   m_Name: Box10
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 51705256}
   m_Layer: 0
   m_Name: Box15
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 133485787}
   m_Layer: 0
   m_Name: Box17
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 146891421}
   m_Layer: 0
   m_Name: Box9
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 493098842}
   m_Layer: 0
   m_Name: Box2
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 568646082}
   m_Layer: 0
   m_Name: Box16
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 585608989}
   m_Layer: 0
   m_Name: Box19
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 762836656}
   m_Layer: 0
   m_Name: Box11
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1137,7 +1137,7 @@ GameObject:
   - component: {fileID: 921257291}
   m_Layer: 0
   m_Name: 32x32_map_tile v1.1_0_46
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 940511202}
   m_Layer: 0
   m_Name: Box3
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1679,7 +1679,7 @@ GameObject:
   - component: {fileID: 1055139218}
   m_Layer: 0
   m_Name: Box14
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1991,6 +1991,7 @@ GameObject:
   - component: {fileID: 1332891015}
   - component: {fileID: 1332891016}
   - component: {fileID: 1332891018}
+  - component: {fileID: 1332891019}
   m_Layer: 0
   m_Name: bonhomme
   m_TagString: Untagged
@@ -2122,8 +2123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3754c15ab9cd6ef45a7dfdcdfbe45b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedJump: 27
-  maxSpeedJump: 27
+  _animator: {fileID: 1332891008}
+  _rigidbody2D: {fileID: 1332891015}
+  vSpeed: 100
 --- !u!114 &1332891014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,8 +2198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 0}
-  speed: 20
-  maxSpeed: 20
+  speed: 100
+  maxSpeed: 50
 --- !u!114 &1332891018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2212,6 +2214,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1332891010}
   start: {fileID: 2000777519}
+--- !u!114 &1332891019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332891007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79897d06a6885104cb3526851842e2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379098966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,7 +2239,7 @@ GameObject:
   - component: {fileID: 1379098967}
   m_Layer: 0
   m_Name: Box5
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2336,7 +2350,7 @@ GameObject:
   - component: {fileID: 1416338757}
   m_Layer: 0
   m_Name: Box13
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2447,7 +2461,7 @@ GameObject:
   - component: {fileID: 1441371242}
   m_Layer: 0
   m_Name: Sol
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2558,7 +2572,7 @@ GameObject:
   - component: {fileID: 1455040564}
   m_Layer: 0
   m_Name: Box18
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2780,7 +2794,7 @@ GameObject:
   - component: {fileID: 1701008559}
   m_Layer: 0
   m_Name: Box8
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2891,7 +2905,7 @@ GameObject:
   - component: {fileID: 1710406055}
   m_Layer: 0
   m_Name: Box1
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3002,7 +3016,7 @@ GameObject:
   - component: {fileID: 1759271728}
   m_Layer: 0
   m_Name: Box4
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3197,7 +3211,7 @@ GameObject:
   - component: {fileID: 1802521755}
   m_Layer: 0
   m_Name: Box12
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3308,7 +3322,7 @@ GameObject:
   - component: {fileID: 1818136262}
   m_Layer: 0
   m_Name: Box7
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3579,7 +3593,7 @@ GameObject:
   - component: {fileID: 1989564452}
   m_Layer: 0
   m_Name: Box6
-  m_TagString: Untagged
+  m_TagString: WalkableSurfaceTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

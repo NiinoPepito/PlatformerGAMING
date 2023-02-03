@@ -10,6 +10,8 @@ public class Run : MonoBehaviour
     [SerializeField] private SpriteRenderer _sprite;
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
+    private bool _isMooving;
+    private int _direction;
 
 
 
@@ -46,20 +48,27 @@ public class Run : MonoBehaviour
     private void Move(){
 
         _animator.SetBool(Running, Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow));
+        _isMooving = Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow);
+        
         if (Input.GetKey(KeyCode.RightArrow)) {
             _sprite.flipX = false;
-            _rigidbody2D.AddForce(new Vector2(speed, 0), ForceMode2D.Force);
+            _direction = 1;
         }
 
         if (Input.GetKey(KeyCode.LeftArrow)) {
             _sprite.flipX = true;
-            _rigidbody2D.AddForce(new Vector2(-speed, 0), ForceMode2D.Force);
+            _direction = -1;
         }
     }
 
     private void FixedUpdate() {
         Vector2 vel = _rigidbody2D.velocity;
-        _rigidbody2D.velocity = new Vector2(Mathf.Clamp(vel.x, -maxSpeed, maxSpeed), vel.y);
 
+        if (_isMooving)
+        {
+            _rigidbody2D.AddForce(new Vector2(speed*_direction, 0), ForceMode2D.Force);
+        }
+        
+        _rigidbody2D.velocity = new Vector2(Mathf.Clamp(vel.x, -maxSpeed, maxSpeed), vel.y);
     }
 }
