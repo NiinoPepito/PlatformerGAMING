@@ -14,13 +14,18 @@ public class Jump : MonoBehaviour
     private void Update()
     {
         PlayerState state = Player.Instance.State;
+
+        if (!_isJumping)
+        {
+            _isJumping = Input.GetKeyDown(KeyCode.UpArrow) && state.ControlState == ControlState.Movable;
+        }
         
-        _isJumping = Input.GetKey(KeyCode.UpArrow) && state.ControlState == ControlState.Movable;
     }
     private void FixedUpdate() {
         if (_isJumping)
         {
             Jumping();
+            _isJumping = false;
         }
     }
 
