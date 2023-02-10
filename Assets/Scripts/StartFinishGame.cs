@@ -9,6 +9,16 @@ public class StartFinishGame : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Transform player;
     [SerializeField] private Transform start;
+    [SerializeField] private GameObject startJumpIndicator;
+    [SerializeField] private GameObject endJumpIndicator;
+    [SerializeField] private GameObject jumpBoost1;
+    [SerializeField] private GameObject jumpBoost2;
+    [SerializeField] private GameObject startGravity;
+    [SerializeField] private GameObject gravity;
+    [SerializeField] private Rigidbody2D _rigidbody2D;
+    [SerializeField] private GameObject startJumpDidacIndicator;
+    [SerializeField] private GameObject startDidacIndicator;
+    [SerializeField] private GameObject startInvisibleIndicator;
 
 
     // Start is called before the first frame update
@@ -21,6 +31,18 @@ public class StartFinishGame : MonoBehaviour
     public void StartOn()
     {
         player.position = start.position;
+        Jump.vSpeed = 27;
+        Jump.n = 0;
+        startJumpIndicator.SetActive(false);
+        endJumpIndicator.SetActive(false);
+        jumpBoost1.SetActive(true);
+        jumpBoost2.SetActive(true);
+        startGravity.SetActive(false);
+        gravity.SetActive(true);
+        startJumpDidacIndicator.SetActive(false);
+        startDidacIndicator.SetActive(true);
+        startInvisibleIndicator.SetActive(false);
+        _rigidbody2D.gravityScale = 5;
     }
 
     // Update is called once per frame

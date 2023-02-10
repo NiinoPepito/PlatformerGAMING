@@ -8,8 +8,15 @@ public class Jump : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody2D;
-    [SerializeField] private float vSpeed;
+    [SerializeField] private GameObject startJumpIndicator;
+    [SerializeField] private GameObject endJumpIndicator;
+    [SerializeField] private GameObject jumpBoost1;
+    [SerializeField] private GameObject jumpBoost2;
+    [SerializeField] private GameObject startGravity;
+    [SerializeField] private GameObject startJumpDidacIndicator;
+    public static float vSpeed = 27;
     private bool _isJumping;
+    public static int n;
 
     private void Update()
     {
@@ -29,14 +36,28 @@ public class Jump : MonoBehaviour
         }
     }
 
-    private void Jumping() {
+    public void Jumping() {
         bool isGround = Player.Instance.State.IsGrounded;
-        Debug.Log("Try Jump");
         
         if (isGround) {
-            Debug.Log("Jump");
             _animator.Play("JumpAnim", -1, 0.0f);
             _rigidbody2D.AddForce(new Vector2(0, vSpeed), ForceMode2D.Impulse);
+            startJumpIndicator.SetActive(false);
+            endJumpIndicator.SetActive(false);
+            startGravity.SetActive(false);
+            startJumpDidacIndicator.SetActive(false);
+            
+            if (n >= 0)
+            {
+                n = n - 1;
+                if (n == 0)
+                {
+                    vSpeed = 27;
+                    jumpBoost1.SetActive(true);
+                    jumpBoost2.SetActive(true);
+                    endJumpIndicator.SetActive(true);
+                }
+            }
         } 
         
     }
